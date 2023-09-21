@@ -31,9 +31,18 @@ terraform apply
 
 ```shell
 ssh microcloud@192.168.122.11
-ssh -t microcloud@192.168.122.11 bash -l
+```
 
-watch 'sudo tail -30 /var/log/cloud-init-output.log'
+```shell
+ssh -t microcloud@192.168.122.11 bash -l
+```
+
+```shell
+sudo snap install openstack --channel 2023.1
+sunbeam prepare-node-script | bash -x && newgrp snap_daemon
+sunbeam cluster bootstrap --accept-defaults
+sunbeam configure --accept-defaults --openrc demo-openrc
+sunbeam openrc > admin-openrc
 ```
 
 ```shell

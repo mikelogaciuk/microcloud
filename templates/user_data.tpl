@@ -25,11 +25,4 @@ write_files:
         #!/bin/sh
 
 runcmd:
-  - echo 'Running cloud-init script'
-  - sudo -u cloud git clone
-  - sudo -u cloud snap install openstack --channel 2023.1
-  - sudo -u cloud sunbeam prepare-node-script | bash -x && newgrp snap_daemon
-  - sudo -u cloud sunbeam cluster bootstrap --accept-defaults
-  - sudo -u cloud sunbeam configure --accept-defaults --openrc demo-openrc
-  - sudo -u cloud sunbeam openrc > admin-openrc
   - echo 'Done'
