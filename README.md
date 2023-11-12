@@ -19,7 +19,7 @@ ln -s $HOME/.ssh/id_rsa.pub $HOME/repos/microcloud/ssh/
 ```
 
 ```virsh
-pool-define-as --name microcloud --type dir --target /home/mlog00/repos/microcloud/volumes
+pool-define-as --name microcloud --type dir --target ~/repos/microcloud/volumes
 pool-autostart microcloud
 pool-start microcloud
 ```
