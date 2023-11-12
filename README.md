@@ -2,6 +2,8 @@
 
 ## Preparations
 
+First, you need to prepare environment:
+
 ```shell
 cd ~/repos/microcloud
 
@@ -19,22 +21,28 @@ ln -s $HOME/.ssh/id_rsa.pub $HOME/repos/microcloud/ssh/
 ```
 
 ```virsh
-pool-define-as --name microcloud --type dir --target ~/repos/microcloud/volumes
+pool-define-as --name microcloud --type dir --target /home/{USER}/repos/microcloud/volumes
 pool-autostart microcloud
 pool-start microcloud
 ```
+
+## Init
+
+To init the stack, type:
 
 ```shell
 terraform init
 terraform apply
 ```
 
+## Setup
+
 ```shell
-ssh microcloud@192.168.122.11
+ssh microcloud@192.168.122.69
 ```
 
 ```shell
-ssh -t microcloud@192.168.122.11 bash -l
+ssh -t microcloud@192.168.122.69 bash -l
 ```
 
 ```shell
@@ -45,6 +53,12 @@ sunbeam configure --accept-defaults --openrc demo-openrc
 sunbeam openrc > admin-openrc
 ```
 
+## Teardown
+
+In order to destroy everything, type:
+
 ```shell
-ssh-keygen -f "$HOME/.ssh/known_hosts" -R "192.168.122.11"
+terraform destroy
+
+ssh-keygen -f "$HOME/.ssh/known_hosts" -R "192.168.122.69"
 ```

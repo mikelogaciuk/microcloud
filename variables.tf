@@ -24,9 +24,9 @@ variable "hostnames" {
 }
 variable "ips" {
   type    = list(any)
-  default = ["192.168.122.11"]
+  default = ["192.168.122.69"]
 }
 variable "macs" {
   type    = list(any)
-  default = ["52:54:00:0e:87:be"]
+  default = ["52:54:00:0e:82:be"]
 }
