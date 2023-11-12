@@ -8,11 +8,11 @@ variable "interface" {
 }
 variable "memory" {
   type    = string
-  default = "20960"
+  default = "40960"
 }
 variable "vcpu" {
   type    = number
-  default = 6
+  default = 10
 }
 variable "distros" {
   type    = list(any)
